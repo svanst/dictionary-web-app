@@ -1,0 +1,31 @@
+.wrapper {
+  position: relative;
+  background-color: var(--clr-neutral-300);
+  display: flex;
+  border-radius: 16px;
+  padding-right: 24px;
+
+  &:focus-within {
+    outline: 1px solid var(--clr-primary);
+
+    input {
+      outline: none;
+    }
+  }
+}
+
+.input {
+  flex: 1;
+  border: none;
+  padding-inline: 24px;
+  padding-block: clamp(16px, 3vw, 20px);
+  background-color: transparent;
+  font-size: var(--fs-500);
+  font-weight: 700;
+}
+
+.button {
+  border: none;
+  background: transparent;
+  cursor: pointer;
+}
