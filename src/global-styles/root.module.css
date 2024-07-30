@@ -12,6 +12,8 @@
   --clr-neutral-700: hsl(0, 0%, 12%);
   --clr-neutral-800: hsl(0, 0%, 2%);
 
+  --clr-outline: var(--clr-neutral-800);
+
   --ff-sans: "Inter";
   --ff-serif: "Lora";
   --ff-mono: "Inconsolata";

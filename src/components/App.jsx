@@ -1,5 +1,6 @@
 import Search from "./Search/Search";
 import MaxWidthWrapper from "./MaxWidthWrapper/MaxWidthWrapper";
+import Switch from "./Switch/Switch";
 
 export default function App() {
   return (
@@ -7,6 +8,7 @@ export default function App() {
       <h1>React app</h1>
       <MaxWidthWrapper>
         <Search />
+        <Switch />
       </MaxWidthWrapper>
     </div>
   );

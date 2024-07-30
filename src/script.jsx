@@ -1,7 +1,7 @@
-import "./global-styles/reset.module.css";
+import "./global-styles/reset.css";
 import "./global-styles/root.module.css";
 import "./global-styles/utilities.module.css";
-import "./global-styles/style.module.css";
+import "./global-styles/style.css";
 
 import { createRoot } from "react-dom/client";
 import App from "./components/App.jsx";
