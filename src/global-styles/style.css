@@ -2,4 +2,5 @@ body {
   font-family: var(--ff-sans);
   font-size: var(--fs-400);
   color: var(--clr-neutral-600);
+  padding-block: 1.5rem;
 }

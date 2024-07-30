@@ -1,2 +1,15 @@
 .header {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  margin-right: auto;
+}
+
+.bar {
+  width: 1px;
+  margin-inline: 1rem;
+  background-color: var(--clr-neutral-300);
+  align-self: stretch;
 }

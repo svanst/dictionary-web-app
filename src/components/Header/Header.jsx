@@ -5,12 +5,13 @@ import styles from "./Header.module.css";
 
 function Header() {
   return (
-    <header>
-      <Button aria-label="Dictionary app | Home">
+    <header className={styles.header}>
+      <a href="/" className={styles.logo} aria-label="Dictionary app | Home">
         <img src="/src/assets/images/logo.svg" alt="" />
-      </Button>
+      </a>
       <Dropdown />
-      {/* <Switch /> */}
+      <div className={styles.bar} aria-hidden="true"></div>
+      <Switch />
     </header>
   );
 }
