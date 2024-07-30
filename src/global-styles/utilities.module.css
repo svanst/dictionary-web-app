@@ -1,5 +1,4 @@
 /* color */
-
 .clr-primary {
   color: var(--clr-primary);
 }
@@ -80,15 +79,15 @@
 
 /* font family */
 
-.ff-sans {
+:global(.ff-sans) {
   font-family: var(--ff-sans);
 }
 
-.ff-serif {
+:global(.ff-serif) {
   font-family: var(--ff-serif);
 }
 
-.ff-mono {
+:global(.ff-mono) {
   font-family: var(--ff-mono);
 }
 
