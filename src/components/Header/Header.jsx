@@ -1,6 +1,5 @@
-import Button from "../Button/Button";
 import Dropdown from "../Dropdown/Dropdown";
-import Switch from "../Switch/Switch";
+import ThemeToggle from "../ThemeToggle/ThemeToggle";
 import styles from "./Header.module.css";
 
 function Header() {
@@ -11,7 +10,7 @@ function Header() {
       </a>
       <Dropdown />
       <div className={styles.bar} aria-hidden="true"></div>
-      <Switch />
+      <ThemeToggle />
     </header>
   );
 }
