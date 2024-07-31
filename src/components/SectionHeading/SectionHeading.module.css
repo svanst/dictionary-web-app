@@ -1,0 +1,13 @@
+.section-heading {
+  font-style: italic;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  &:after {
+    content: "";
+    display: block;
+    flex: 1;
+    height: 1px;
+    background-color: var(--clr-neutral-300);
+  }
+}

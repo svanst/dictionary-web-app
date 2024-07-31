@@ -3,9 +3,9 @@ import styles from "./search.module.css";
 
 import { VisuallyHidden } from "@radix-ui/react-visually-hidden";
 
-function Search() {
+function Search({ className = "" }) {
   return (
-    <form action="">
+    <form className={className} action="">
       <div className={styles.wrapper}>
         <VisuallyHidden asChild>
           <label htmlFor="word">Word</label>

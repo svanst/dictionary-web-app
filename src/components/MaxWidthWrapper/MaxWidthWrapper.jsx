@@ -1,4 +1,4 @@
-import styles from "./MaxWidthWrapper.module.css";
+import styles from "./maxWidthWrapper.module.css";
 
 function MaxWidthWrapper({ width, children }) {
   return (

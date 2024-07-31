@@ -1,0 +1,46 @@
+.meaning {
+  padding-bottom: 2rem;
+
+  &:first-of-type {
+    padding-top: 2rem;
+  }
+}
+
+.section-heading {
+  margin-bottom: 35px;
+}
+
+.sub-heading {
+  font-size: var(--fs-500);
+  font-weight: 400;
+  margin-bottom: 18px;
+  color: var(--clr-neutral-400);
+}
+
+.definitions {
+  padding-inline: 1rem 0; /* aligns the bullet point */
+
+  &:not(:last-child) {
+    margin-bottom: 24px;
+  }
+
+  li {
+    padding-left: 10px;
+    &:not(:last-child) {
+      margin-bottom: 13px;
+    }
+
+    &::marker {
+      color: var(--clr-primary);
+    }
+  }
+}
+
+.synonyms {
+  display: flex;
+  gap: 40px;
+}
+
+.example {
+  margin-top: 13px;
+}

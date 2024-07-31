@@ -1,0 +1,9 @@
+/* define spacing between components here, to keep the child components free of margins and increase re-usability */
+
+.header {
+  margin-bottom: 24px;
+}
+
+.search {
+  margin-bottom: 28px;
+}

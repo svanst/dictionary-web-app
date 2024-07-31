@@ -1,5 +1,5 @@
 import { VisuallyHidden } from "@radix-ui/react-visually-hidden";
-import styles from "./Dropdown.module.css";
+import styles from "./dropdown.module.css";
 import { useState } from "react";
 import { CheckIcon } from "@radix-ui/react-icons";
 

@@ -18,7 +18,7 @@
   flex: 1;
   border: none;
   padding-inline: 24px;
-  padding-block: clamp(16px, 3vw, 20px);
+  padding-block: clamp(14px, 3vw, 20px);
   background-color: transparent;
   font-size: var(--fs-500);
   font-weight: 700;

@@ -1,0 +1,20 @@
+.source {
+  padding-block: 24px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  color: inherit;
+  text-underline-offset: 3px;
+
+  h2 {
+    text-decoration: underline;
+    text-decoration-color: currentColor;
+  }
+
+  a {
+    color: inherit;
+    ::after {
+      content: url("./src/assets/images/icon-new-window.svg");
+    }
+  }
+}

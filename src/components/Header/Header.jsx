@@ -1,10 +1,10 @@
 import Dropdown from "../Dropdown/Dropdown";
 import ThemeToggle from "../ThemeToggle/ThemeToggle";
-import styles from "./Header.module.css";
+import styles from "./header.module.css";
 
-function Header() {
+function Header({ className = "" }) {
   return (
-    <header className={styles.header}>
+    <header className={`${className} ${styles.header}`}>
       <a href="/" className={styles.logo} aria-label="Dictionary app | Home">
         <img src="/src/assets/images/logo.svg" alt="" />
       </a>
