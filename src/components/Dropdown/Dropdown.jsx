@@ -56,7 +56,7 @@ function Dropdown() {
 
   return (
     <>
-      <div className={styles.dropdown}>
+      <div className={`fs-300 fw-bold ${styles.dropdown}`}>
         <VisuallyHidden asChild>
           <label id="font-label" htmlFor="font-dropdown-trigger">
             Font

@@ -1,8 +1,11 @@
+@value tablet-and-up from "/src/global-styles/breakpoints.module.css";
+
 .meaning {
-  padding-bottom: 2rem;
+  --meaing-spacing: clamp(2rem, 6vw, 2.5rem);
+  padding-bottom: var(--meaing-spacing);
 
   &:first-of-type {
-    padding-top: 2rem;
+    padding-top: var(--meaing-spacing);
   }
 }
 
@@ -19,6 +22,10 @@
 
 .definitions {
   padding-inline: 1rem 0; /* aligns the bullet point */
+
+  @media (tablet-and-up) {
+    padding-left: 38px;
+  }
 
   &:not(:last-child) {
     margin-bottom: 24px;
@@ -38,7 +45,14 @@
 
 .synonyms {
   display: flex;
-  gap: 40px;
+  flex-wrap: wrap;
+  dt {
+    margin-right: 40px;
+  }
+
+  dd {
+    margin-right: 24px;
+  }
 }
 
 .example {

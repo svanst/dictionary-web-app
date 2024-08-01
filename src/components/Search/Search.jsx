@@ -3,20 +3,25 @@ import styles from "./search.module.css";
 
 import { VisuallyHidden } from "@radix-ui/react-visually-hidden";
 
-function Search({ className = "" }) {
+function Search({ searchTerm, setSearchTerm }) {
   return (
-    <form className={className} action="">
-      <div className={styles.wrapper}>
-        <VisuallyHidden asChild>
-          <label htmlFor="word">Word</label>
-        </VisuallyHidden>
+    <div className={styles.wrapper}>
+      <VisuallyHidden asChild>
+        <label htmlFor="word">Word</label>
+      </VisuallyHidden>
 
-        <input className={styles.input} type="text" name="word" id="word" />
-        <Button type="submit" className={styles.button} aria-label="search">
-          <img src="/src/assets/images/icon-search.svg" alt="" />
-        </Button>
-      </div>
-    </form>
+      <input
+        className={styles.input}
+        type="text"
+        name="word"
+        id="word"
+        value={searchTerm}
+        onChange={(e) => setSearchTerm(e.target.value)}
+      />
+      <Button type="submit" className={styles.button} aria-label="search">
+        <img src="/src/assets/images/icon-search.svg" alt="" />
+      </Button>
+    </div>
   );
 }
 

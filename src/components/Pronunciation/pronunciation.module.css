@@ -1,3 +1,5 @@
+@value tablet-and-up from "/src/global-styles/breakpoints.module.css";
+
 .wrapper {
   display: grid;
   grid-template-columns: 1fr auto;
@@ -21,5 +23,9 @@
 
   img {
     width: 48px;
+
+    @media (tablet-and-up) {
+      width: 75px;
+    }
   }
 }

@@ -1,0 +1,11 @@
+.error-message {
+  display: grid;
+  justify-items: center;
+  gap: 1.5rem;
+  text-align: center;
+}
+
+.smiley {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
