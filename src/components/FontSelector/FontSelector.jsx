@@ -1,6 +1,6 @@
 import { VisuallyHidden } from "@radix-ui/react-visually-hidden";
-import styles from "./dropdown.module.css";
-import { useState } from "react";
+import styles from "./font-selector.module.css";
+import { useEffect, useState } from "react";
 import { CheckIcon } from "@radix-ui/react-icons";
 
 const options = [
@@ -9,10 +9,14 @@ const options = [
   { label: "Mono", id: "mono" },
 ];
 
-function Dropdown() {
+function FontSelector() {
   const [isOpen, setIsOpen] = useState(false);
   const [selectedOption, setSelectedOption] = useState(options[0]);
   const [currentIndex, setCurrentIndex] = useState(0);
+
+  useEffect(() => {
+    document.body.dataset.font = selectedOption.id;
+  }, [selectedOption]);
 
   function next() {
     const newCurrentIndex = Math.min(currentIndex + 1, options.length - 1);
@@ -119,4 +123,4 @@ function Dropdown() {
   );
 }
 
-export default Dropdown;
+export default FontSelector;

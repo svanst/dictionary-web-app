@@ -1,6 +1,5 @@
 .wrapper {
   position: relative;
-  background-color: var(--clr-neutral-300);
   display: flex;
   border-radius: 16px;
   padding-right: 24px;

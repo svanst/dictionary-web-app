@@ -1,9 +1,13 @@
 import { VisuallyHidden } from "@radix-ui/react-visually-hidden";
 import styles from "./themetoggle.module.css";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 function ThemeToggle() {
-  const [darkMode, setDarkMode] = useState(false);
+  const [theme, setTheme] = useState("light");
+
+  useEffect(() => {
+    document.documentElement.dataset.theme = theme;
+  }, [theme]);
 
   return (
     <label className={styles.toggle} htmlFor="theme">
@@ -13,12 +17,12 @@ function ThemeToggle() {
           name="theme"
           id="theme"
           role="switch"
-          checked={darkMode}
-          aria-checked={darkMode}
-          onChange={(e) => setDarkMode(e.target.checked)}
+          checked={theme === "dark"}
+          aria-checked={theme}
+          onChange={() => setTheme(theme === "light" ? "dark" : "light")}
           className={styles.input}
         />
-        <span className={styles.slider}></span>
+        <span className={`bg-neutral-450 ${styles.slider}`}></span>
       </div>
       <VisuallyHidden>Theme</VisuallyHidden>
       <svg
@@ -30,7 +34,7 @@ function ThemeToggle() {
       >
         <path
           fill="none"
-          stroke={`var(--clr-neutral-400)`}
+          stroke={`var(--clr-neutral-450)`}
           strokeLinecap="round"
           strokeLinejoin="round"
           strokeWidth="1.5"

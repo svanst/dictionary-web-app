@@ -5,7 +5,7 @@ function ErrorMessage({ title, message, resolution }) {
     <section className={styles.errorMessage}>
       <span className={styles.smiley}>😕</span>
       <h1 className="fs-500">{title}</h1>
-      <p>
+      <p className="clr-neutral-400">
         {message} {resolution}
       </p>
     </section>

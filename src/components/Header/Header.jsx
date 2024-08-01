@@ -1,4 +1,4 @@
-import Dropdown from "../Dropdown/Dropdown";
+import FontSelector from "../FontSelector/FontSelector";
 import ThemeToggle from "../ThemeToggle/ThemeToggle";
 import styles from "./header.module.css";
 
@@ -8,7 +8,7 @@ function Header({ className = "" }) {
       <a href="/" className={styles.logo} aria-label="Dictionary app | Home">
         <img src="/src/assets/images/logo.svg" alt="" />
       </a>
-      <Dropdown />
+      <FontSelector />
       <div className={styles.bar} aria-hidden="true"></div>
       <ThemeToggle />
     </header>

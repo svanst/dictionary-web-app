@@ -43,7 +43,7 @@
     right: 0;
     background: var(--clr-neutral-100);
     list-style: none;
-    box-shadow: 0 5px 30px hsla(var(--clr-neutral-900-hsl), 0.1);
+    box-shadow: 0 5px 30px var(--clr-box-shadow);
   }
 
   [aria-expanded="true"] + [role="listbox"] {

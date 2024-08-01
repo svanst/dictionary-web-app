@@ -2,5 +2,14 @@ body {
   font-family: var(--ff-sans);
   font-size: var(--fs-400);
   color: var(--clr-neutral-600);
+  background-color: var(--clr-neutral-100);
   padding-block: clamp(1.5rem, 6.5vw, 3.75rem);
+
+  &[data-font="serif"] {
+    font-family: var(--ff-serif);
+  }
+
+  &[data-font="mono"] {
+    font-family: var(--ff-mono);
+  }
 }

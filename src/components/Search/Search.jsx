@@ -5,7 +5,7 @@ import { VisuallyHidden } from "@radix-ui/react-visually-hidden";
 
 function Search({ searchTerm, setSearchTerm }) {
   return (
-    <div className={styles.wrapper}>
+    <div className={`bg-neutral-200 ${styles.wrapper}`}>
       <VisuallyHidden asChild>
         <label htmlFor="word">Word</label>
       </VisuallyHidden>
