@@ -3,7 +3,7 @@ import styles from "./font-selector.module.css";
 import { useEffect, useState } from "react";
 import { CheckIcon } from "@radix-ui/react-icons";
 
-const options = [
+const fonts = [
   { label: "Sans Serif", id: "sans" },
   { label: "Serif", id: "serif" },
   { label: "Mono", id: "mono" },
@@ -11,15 +11,18 @@ const options = [
 
 function FontSelector() {
   const [isOpen, setIsOpen] = useState(false);
-  const [selectedOption, setSelectedOption] = useState(options[0]);
-  const [currentIndex, setCurrentIndex] = useState(0);
+  const [selectedFont, setSelectedFont] = useState(getInitialFont);
+  const [currentIndex, setCurrentIndex] = useState(() =>
+    fonts.findIndex((font) => font.id === selectedFont.id)
+  );
 
   useEffect(() => {
-    document.body.dataset.font = selectedOption.id;
-  }, [selectedOption]);
+    document.body.dataset.font = selectedFont.id;
+    localStorage.setItem("font", JSON.stringify(selectedFont));
+  }, [selectedFont]);
 
   function next() {
-    const newCurrentIndex = Math.min(currentIndex + 1, options.length - 1);
+    const newCurrentIndex = Math.min(currentIndex + 1, fonts.length - 1);
     setCurrentIndex(newCurrentIndex);
   }
 
@@ -29,7 +32,7 @@ function FontSelector() {
   }
 
   function selectCurrent() {
-    setSelectedOption(options[currentIndex]);
+    setSelectedFont(fonts[currentIndex]);
   }
 
   function handleKeyDown(e) {
@@ -58,6 +61,13 @@ function FontSelector() {
     }
   }
 
+  const isSelectedFont = (font) => font.id === selectedFont.id;
+
+  function getInitialFont() {
+    const fontLocalStorage = localStorage.getItem("font");
+    return fontLocalStorage ? JSON.parse(fontLocalStorage) : fonts[0];
+  }
+
   return (
     <>
       <div className={`fs-300 fw-bold ${styles.dropdown}`}>
@@ -75,7 +85,7 @@ function FontSelector() {
           aria-labelledby="font-label"
           role="combobox"
           tabIndex="0"
-          aria-activedescendant={selectedOption.id}
+          aria-activedescendant={selectedFont.id}
           onClick={() => {
             if (!isOpen) {
               setIsOpen(true);
@@ -87,34 +97,32 @@ function FontSelector() {
           onBlur={() => setIsOpen(false)}
           onKeyDown={handleKeyDown}
         >
-          {selectedOption.label}
+          {selectedFont.label}
         </button>
 
         <ul id="option-list" role="listbox" aria-labelledby="font-label">
-          {options.map((option, i) => (
+          {fonts.map((font, i) => (
             // eslint-disable-next-line jsx-a11y/click-events-have-key-events
             <li
-              className={`ff-${option.id} ${
+              className={`ff-${font.id} ${
                 i === currentIndex ? styles.currentOption : ""
               }`}
-              key={option.id}
+              key={font.id}
               role="option"
-              aria-selected={option === selectedOption}
-              id={option.id}
-              data-value={option.label.toLowerCase()}
+              aria-selected={isSelectedFont(font)}
+              id={font.id}
+              data-value={font.label.toLowerCase()}
               onClick={(e) => {
-                setSelectedOption(
-                  options.find((option) => option.id === e.currentTarget.id)
+                setSelectedFont(
+                  fonts.find((font) => font.id === e.currentTarget.id)
                 );
                 setCurrentIndex(i);
                 setIsOpen(false);
               }}
               onMouseDown={(e) => e.preventDefault()} // prevent blur event that would fire before the click event of the li
             >
-              {option === selectedOption && (
-                <CheckIcon className={styles.check} />
-              )}
-              {option.label}
+              {isSelectedFont(font) && <CheckIcon className={styles.check} />}
+              {font.label}
             </li>
           ))}
         </ul>

@@ -3,10 +3,14 @@ import styles from "./themetoggle.module.css";
 import { useEffect, useState } from "react";
 
 function ThemeToggle() {
-  const [theme, setTheme] = useState("light");
+  const [theme, setTheme] = useState(() => {
+    const themeLocalStorage = localStorage.getItem("theme");
+    return themeLocalStorage || "light";
+  });
 
   useEffect(() => {
     document.documentElement.dataset.theme = theme;
+    localStorage.setItem("theme", theme);
   }, [theme]);
 
   return (

@@ -41,6 +41,7 @@ function Search({ setSubmittedTerm, className }) {
           onChange={(e) => setSearchTerm(e.target.value)}
           required
           aria-describedby="error-search"
+          autoComplete="off"
         />
         <span className={styles.error} id="error-search" aria-live="polite">
           {showValidationFeedback &&
