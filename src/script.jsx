@@ -1,6 +1,6 @@
 import "./global-styles/reset.css";
-import "./global-styles/root.module.css";
-import "./global-styles/utilities.module.css";
+import "./global-styles/root.css";
+import "./global-styles/utilities.css";
 import "./global-styles/style.css";
 
 import { createRoot } from "react-dom/client";

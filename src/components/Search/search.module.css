@@ -21,10 +21,28 @@
   background-color: transparent;
   font-size: var(--fs-500);
   font-weight: 700;
+
+  &:user-invalid {
+    outline-color: var(--clr-error) !important;
+  }
 }
 
 .button {
   border: none;
   background: transparent;
   cursor: pointer;
+  width: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.error {
+  color: var(--clr-error);
+  position: absolute;
+  top: calc(100% + 0.5rem);
+}
+
+.was-validated .wrapper:has(input:invalid) {
+  outline: 1px solid var(--clr-error);
 }

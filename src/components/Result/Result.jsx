@@ -21,8 +21,8 @@ function Result({ data }) {
       <VisuallyHidden>
         <h2>Definitions</h2>
       </VisuallyHidden>
-      {data.meanings.map((meaning) => (
-        <Meaning key={meaning.partOfSpeech} meaning={meaning} />
+      {data.meanings.map((meaning, i) => (
+        <Meaning key={i} meaning={meaning} />
       ))}
       <Divider />
       <div className={styles.source}>

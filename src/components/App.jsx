@@ -3,6 +3,7 @@ import useSWR from "swr";
 import MaxWidthWrapper from "./MaxWidthWrapper/MaxWidthWrapper";
 import Header from "./Header/Header";
 import styles from "./app.module.css";
+
 import Result from "./Result/Result";
 import Search from "./Search/Search";
 import ErrorMessage from "./ErrorMessage/ErrorMessage";
@@ -29,7 +30,6 @@ const SWROptions = {
 };
 
 export default function App() {
-  const [searchTerm, setSearchTerm] = useState("");
   const [submittedTerm, setSubmittedTerm] = useState("");
   const { data, error, isLoading } = useSWR(
     submittedTerm ? `${apiEndpoint}/${submittedTerm}` : null,
@@ -37,11 +37,6 @@ export default function App() {
     SWROptions
   );
   const showLoading = useShowLoading(isLoading);
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    setSubmittedTerm(searchTerm);
-  };
 
   if (error && !(error.body && error.status === 404)) {
     // A 404 is returned and the error has a body in the common scenario that a word is not found in the dictionary. Don't clutter the console in that case
@@ -52,13 +47,8 @@ export default function App() {
     <MaxWidthWrapper>
       <Header className={styles.header} />
       <main>
-        <form onSubmit={handleSubmit} className={styles.search}>
-          <Search
-            searchTerm={searchTerm}
-            setSearchTerm={setSearchTerm}
-            className={styles.search}
-          />
-        </form>
+        <Search setSubmittedTerm={setSubmittedTerm} className={styles.search} />
+
         {showLoading && <p>Loading...</p>}
         {error && renderError(error)}
         {data?.[0] && <Result data={data[0]} />}

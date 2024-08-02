@@ -18,7 +18,7 @@
     gap: 0.5rem;
 
     &::after {
-      content: url("./src/assets/images/icon-new-window.svg");
+      content: url("/src/assets/images/icon-new-window.svg");
     }
   }
 }
