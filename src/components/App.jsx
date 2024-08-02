@@ -30,7 +30,7 @@ const SWROptions = {
 };
 
 export default function App() {
-  const [submittedTerm, setSubmittedTerm] = useState("");
+  const [submittedTerm, setSubmittedTerm] = useState("dharma");
   const { data, error, isLoading } = useSWR(
     submittedTerm ? `${apiEndpoint}/${submittedTerm}` : null,
     fetcher,

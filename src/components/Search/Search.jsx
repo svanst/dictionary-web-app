@@ -2,11 +2,16 @@ import { VisuallyHidden } from "@radix-ui/react-visually-hidden";
 import Button from "../Button/Button";
 import styles from "./search.module.css";
 import searchIcon from "../../assets/images/icon-search.svg";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 function Search({ setSubmittedTerm, className }) {
   const [searchTerm, setSearchTerm] = useState("");
   const [showValidationFeedback, setShowValidationFeedback] = useState(false);
+  const inputRef = useRef(null);
+
+  useEffect(() => {
+    inputRef.current.focus();
+  }, []);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -42,6 +47,7 @@ function Search({ setSubmittedTerm, className }) {
           required
           aria-describedby="error-search"
           autoComplete="off"
+          ref={inputRef}
         />
         <span className={styles.error} id="error-search" aria-live="polite">
           {showValidationFeedback &&

@@ -21,6 +21,7 @@
   background-color: transparent;
   font-size: var(--fs-500);
   font-weight: 700;
+  caret-color: var(--clr-primary);
 
   &:user-invalid {
     outline-color: var(--clr-error) !important;
