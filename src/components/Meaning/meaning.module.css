@@ -2,6 +2,7 @@
 
 .meaning {
   --meaing-spacing: clamp(2rem, 6vw, 2.5rem);
+
   padding-bottom: var(--meaing-spacing);
 
   &:first-of-type {
@@ -33,6 +34,7 @@
 
   li {
     padding-left: 10px;
+
     &:not(:last-child) {
       margin-bottom: 13px;
     }
@@ -46,6 +48,7 @@
 .synonyms {
   display: flex;
   flex-wrap: wrap;
+
   dt {
     margin-right: 40px;
   }

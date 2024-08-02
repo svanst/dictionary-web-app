@@ -1,24 +1,20 @@
 :root {
-  --clr-primary: hsl(274, 82%, 60%);
-  --clr-error: hsl(0, 100%, 66%);
-  --clr-neutral-100: hsl(0, 0%, 100%);
-  --clr-neutral-200: hsl(0, 0%, 96%);
-  --clr-neutral-300: hsl(0, 0%, 91%);
-  --clr-neutral-400: hsl(0, 0%, 51%);
-  --clr-neutral-450: hsl(0, 0%, 46%);
-  --clr-neutral-500: hsl(0, 0%, 23%);
-  --clr-neutral-600: hsl(0, 0%, 18%);
-  --clr-neutral-700: hsl(0, 0%, 12%);
-  --clr-neutral-800: hsl(0, 0%, 2%);
-
-  --clr-box-shadow: hsl(0 0% 0% / 10%);
-
+  --clr-primary: hsl(274deg 82% 60%);
+  --clr-error: hsl(0deg 100% 66%);
+  --clr-neutral-100: hsl(0deg 0% 100%);
+  --clr-neutral-200: hsl(0deg 0% 96%);
+  --clr-neutral-300: hsl(0deg 0% 91%);
+  --clr-neutral-400: hsl(0deg 0% 51%);
+  --clr-neutral-450: hsl(0deg 0% 46%);
+  --clr-neutral-500: hsl(0deg 0% 23%);
+  --clr-neutral-600: hsl(0deg 0% 18%);
+  --clr-neutral-700: hsl(0deg 0% 12%);
+  --clr-neutral-800: hsl(0deg 0% 2%);
+  --clr-box-shadow: hsl(0deg 0% 0% / 10%);
   --clr-outline: var(--clr-neutral-800);
-
   --ff-sans: "Inter";
   --ff-serif: "Lora";
   --ff-mono: "Inconsolata";
-
   --fs-200: calc(14 / 16 * 1rem);
   --fs-300: calc(14 / 16 * 1rem);
   --fs-400: calc(15 / 16 * 1rem);
@@ -27,7 +23,7 @@
   --fs-700: calc(20 / 16 * 1rem);
   --fs-800: calc(32 / 16 * 1rem);
 
-  @media (min-width: 34.375rem) {
+  @media (width >= 34.375rem) {
     --fs-300: calc(18 / 16 * 1rem);
     --fs-400: calc(18 / 16 * 1rem);
     --fs-500: calc(20 / 16 * 1rem);
@@ -36,19 +32,20 @@
   }
 
   @media (prefers-color-scheme: dark) {
-    --clr-neutral-100: hsl(0, 0%, 2%);
-    --clr-neutral-200: hsl(0, 0%, 12%);
-    --clr-neutral-450: hsl(274, 82%, 60%);
-    --clr-neutral-600: hsl(0, 0%, 100%);
-    --clr-box-shadow: hsl(274, 82%, 60%);
+    --clr-neutral-100: hsl(0deg 0% 2%);
+    --clr-neutral-200: hsl(0deg 0% 12%);
+    --clr-neutral-450: hsl(274deg 82% 60%);
+    --clr-neutral-600: hsl(0deg 0% 100%);
+    --clr-box-shadow: hsl(274deg 82% 60%);
   }
 
   &[data-theme="dark"] {
-    --clr-neutral-100: hsl(0, 0%, 2%);
-    --clr-neutral-200: hsl(0, 0%, 12%);
-    --clr-neutral-300: hsl(0, 0%, 23%);
-    --clr-neutral-450: hsl(274, 82%, 60%);
-    --clr-neutral-600: hsl(0, 0%, 100%);
-    --clr-box-shadow: hsl(274, 82%, 60%);
+    --clr-neutral-100: hsl(0deg 0% 2%);
+    --clr-neutral-200: hsl(0deg 0% 12%);
+    --clr-neutral-300: hsl(0deg 0% 23%);
+    --clr-neutral-450: hsl(274deg 82% 60%);
+    --clr-neutral-600: hsl(0deg 0% 100%);
+    --clr-box-shadow: hsl(274deg 82% 60%);
+    --clr-outline: hsl(0deg 0% 100%);
   }
 }

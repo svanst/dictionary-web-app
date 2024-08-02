@@ -32,8 +32,19 @@
   @media (hover: hover) and (pointer: fine) {
     &:hover {
       .triangle {
-        fill: hsl(0 0% 100%);
+        fill: hsl(0deg 0% 100%);
       }
+
+      .circle {
+        opacity: 1;
+      }
+    }
+
+    &:active {
+      .triangle {
+        fill: hsl(0deg 0% 100%);
+      }
+
       .circle {
         opacity: 1;
       }

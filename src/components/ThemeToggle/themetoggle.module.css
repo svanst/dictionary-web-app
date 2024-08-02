@@ -9,6 +9,7 @@
   --height: 20px;
   --toggle-size: 14px;
   --breathing-room: calc((var(--height) - var(--toggle-size)) / 2);
+
   display: inline-flex;
   cursor: pointer;
   position: relative;
@@ -18,22 +19,6 @@
   &:focus-within {
     outline: 1px solid var(--clr-outline);
     outline-offset: 3px;
-  }
-}
-
-.input {
-  position: absolute;
-  opacity: 0;
-
-  &:checked + .slider {
-    background-color: var(--clr-primary);
-
-    &::before {
-      transform: translate(
-        calc(var(--width) - var(--toggle-size) - var(--breathing-room)),
-        -50%
-      );
-    }
   }
 }
 
@@ -54,5 +39,21 @@
     background-color: var(--clr-neutral-100);
     border-radius: 50%;
     transition: transform 0.2s;
+  }
+}
+
+.input {
+  position: absolute;
+  opacity: 0;
+
+  &:checked + .slider {
+    background-color: var(--clr-primary);
+
+    &::before {
+      transform: translate(
+        calc(var(--width) - var(--toggle-size) - var(--breathing-room)),
+        -50%
+      );
+    }
   }
 }

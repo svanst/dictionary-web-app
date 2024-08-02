@@ -15,6 +15,9 @@ function ThemeToggle() {
 
   return (
     <label className={styles.toggle} htmlFor="theme">
+      <VisuallyHidden>
+        Theme: {theme === "dark" ? "Dark Mode" : "Light Mode"}.
+      </VisuallyHidden>
       <div className={styles.switch}>
         <input
           type="checkbox"
@@ -22,13 +25,12 @@ function ThemeToggle() {
           id="theme"
           role="switch"
           checked={theme === "dark"}
-          aria-checked={theme}
+          aria-checked={theme === "dark"}
           onChange={() => setTheme(theme === "light" ? "dark" : "light")}
           className={styles.input}
         />
         <span className={`bg-neutral-450 ${styles.slider}`}></span>
       </div>
-      <VisuallyHidden>Theme</VisuallyHidden>
       <svg
         xmlns="http://www.w3.org/2000/svg"
         width="22"
