@@ -30,7 +30,9 @@ const SWROptions = {
 };
 
 export default function App() {
-  const [submittedTerm, setSubmittedTerm] = useState("dharma");
+  const [submittedTerm, setSubmittedTerm] = useState(
+    import.meta.env.VITE_INITIAL_SEARCHTERM
+  );
   const { data, error, isLoading } = useSWR(
     submittedTerm ? `${apiEndpoint}/${submittedTerm}` : null,
     fetcher,
